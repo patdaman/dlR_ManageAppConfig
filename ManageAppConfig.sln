@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Logging", "Lib\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils.Exception", "Lib\CommonUtils.ExceptionUtils\CommonUtils.Exception.csproj", "{3FEAD7C0-7FC3-4F61-89D0-501153733EE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationManagement", "WebApps\ConfigurationManagement\ConfigurationManagement.csproj", "{7248295A-4509-44DD-A89E-0CCC3F1B6A3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,12 @@ Global
 		{3FEAD7C0-7FC3-4F61-89D0-501153733EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FEAD7C0-7FC3-4F61-89D0-501153733EE3}.SignalCi|Any CPU.ActiveCfg = SignalCi|Any CPU
 		{3FEAD7C0-7FC3-4F61-89D0-501153733EE3}.SignalCi|Any CPU.Build.0 = SignalCi|Any CPU
+		{7248295A-4509-44DD-A89E-0CCC3F1B6A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7248295A-4509-44DD-A89E-0CCC3F1B6A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7248295A-4509-44DD-A89E-0CCC3F1B6A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7248295A-4509-44DD-A89E-0CCC3F1B6A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7248295A-4509-44DD-A89E-0CCC3F1B6A3B}.SignalCi|Any CPU.ActiveCfg = Release|Any CPU
+		{7248295A-4509-44DD-A89E-0CCC3F1B6A3B}.SignalCi|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,5 +130,6 @@ Global
 		{2669A03F-8C1B-4BDE-808A-43ED18C61B20} = {ACC9C7D3-E60B-43C9-B82F-EA2BD0E797BB}
 		{8857177F-4D00-4C57-BD56-41B0AD1BE9AA} = {4786607E-7BB7-4747-8BA5-8F9C032DE4D3}
 		{3FEAD7C0-7FC3-4F61-89D0-501153733EE3} = {4786607E-7BB7-4747-8BA5-8F9C032DE4D3}
+		{7248295A-4509-44DD-A89E-0CCC3F1B6A3B} = {ACC9C7D3-E60B-43C9-B82F-EA2BD0E797BB}
 	EndGlobalSection
 EndGlobal
