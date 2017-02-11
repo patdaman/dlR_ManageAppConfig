@@ -1,0 +1,6 @@
+C:\Users\pdelosreyes\Documents\Development\Apps\UpdateAppConfig_Compact\bin\Debug\UpdateAppConfig_Compact.exe.config
+C:\Users\pdelosreyes\Documents\Development\Apps\UpdateAppConfig_Compact\bin\Debug\UpdateAppConfig_Compact.exe
+C:\Users\pdelosreyes\Documents\Development\Apps\UpdateAppConfig_Compact\bin\Debug\UpdateAppConfig_Compact.pdb
+C:\Users\pdelosreyes\Documents\Development\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.csprojResolveAssemblyReference.cache
+C:\Users\pdelosreyes\Documents\Development\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.exe
+C:\Users\pdelosreyes\Documents\Development\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.pdb

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AppConfigManagement.Models.Machine>
+
+@using GridMvc.Html
+@{
+    ViewBag.Title = "ManageAppConfig";
+}
+
+<h2>ManageAppConfig</h2>
+
+@Html.Grid(Model).Columns(columns =>
+{
+    /* Adding not mapped column, that renders body, using inline Razor html helper */
+    columns.Add()
+            .Encoded(false)
+            .Sanitized(false)
+            .SetWidth(30)
+            .RenderValueAs(d =>
+            @<b>
+                @Html.ActionLink("Edit", "Index")
+            </b>);
+
+    columns.Add(o => o.machine_name)
+            .Titled("Name")
+            .SetWidth(100);
+
+    columns.Add(o => o.active)
+            .Titled("Active")
+            .SetWidth(10);
+
+    columns.Add(o => o.location)
+            .Titled("Location")
+            .SetWidth(100);
+
+    columns.Add(o => o.usage)
+            .Titled("Usage")
+            .SetWidth(100);
+
+    columns.Add(o => o.create_date, "Date Added")
+            .Titled("Date Added")
+            .Format("{0:dd/MM/yyyy}")
+            .SetWidth(110);
+
+    columns.Add(o => o.modify_date)
+            .Titled("Date Last Modified")
+            .Format("{0:dd/MM/yyyy}")
+            .SetWidth(150);
+
+
+}).SetRowCssClasses(item => item.active ? "warning" : string.Empty).WithPaging(15).Sortable().Filterable().WithMultipleFilters()
+
+

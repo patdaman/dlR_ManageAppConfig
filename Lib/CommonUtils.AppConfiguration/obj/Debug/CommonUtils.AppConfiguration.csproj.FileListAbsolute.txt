@@ -1,0 +1,7 @@
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.AppConfiguration\bin\Debug\SGNL.CommonUtils.AppConfiguration.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.AppConfiguration\bin\Debug\SGNL.CommonUtils.AppConfiguration.pdb
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.AppConfiguration\obj\Debug\CommonUtils.AppConfiguration.csprojResolveAssemblyReference.cache
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.AppConfiguration\obj\Debug\SGNL.CommonUtils.AppConfiguration.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.AppConfiguration\obj\Debug\SGNL.CommonUtils.AppConfiguration.pdb
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.AppConfiguration\bin\Debug\ViewModel.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.AppConfiguration\bin\Debug\ViewModel.pdb

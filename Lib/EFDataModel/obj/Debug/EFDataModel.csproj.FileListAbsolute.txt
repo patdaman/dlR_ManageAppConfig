@@ -1,0 +1,10 @@
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\bin\Debug\EFDataModel.dll.config
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\bin\Debug\EFDataModel.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\bin\Debug\EFDataModel.pdb
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\bin\Debug\EntityFramework.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\bin\Debug\EntityFramework.xml
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\obj\Debug\EFDataModel.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\obj\Debug\EFDataModel.pdb
+C:\Users\pdelosreyes\Documents\Development\Lib\EFDataModel\obj\Debug\EFDataModel.csprojResolveAssemblyReference.cache

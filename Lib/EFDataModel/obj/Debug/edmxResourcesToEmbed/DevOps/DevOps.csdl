@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DevOpsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Enum_EnvironmentVariableType">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EnvironmentVariables" Relationship="Self.FK_EnvironmentVariables_Enum_EnvironmentVariableType" FromRole="Enum_EnvironmentVariableType" ToRole="EnvironmentVariables" />
+  </EntityType>
+  <EntityType Name="Enum_MachineUsageType">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Machines" Relationship="Self.FK_Machines_Enum_MachineUsageType" FromRole="Enum_MachineUsageType" ToRole="Machines" />
+  </EntityType>
+  <EntityType Name="EnvironmentVariable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="key" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="path" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Enum_EnvironmentVariableType" Relationship="Self.FK_EnvironmentVariables_Enum_EnvironmentVariableType" FromRole="EnvironmentVariables" ToRole="Enum_EnvironmentVariableType" />
+    <NavigationProperty Name="Machines" Relationship="Self.MachineVariables" FromRole="EnvironmentVariables" ToRole="Machines" />
+  </EntityType>
+  <EntityType Name="MachineGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="group_name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Machines" Relationship="Self.MachineGroupMapping" FromRole="MachineGroup" ToRole="Machines" />
+  </EntityType>
+  <EntityType Name="Machine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="machine_name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="usage" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Enum_MachineUsageType" Relationship="Self.FK_Machines_Enum_MachineUsageType" FromRole="Machines" ToRole="Enum_MachineUsageType" />
+    <NavigationProperty Name="MachineGroups" Relationship="Self.MachineGroupMapping" FromRole="Machines" ToRole="MachineGroup" />
+    <NavigationProperty Name="EnvironmentVariables" Relationship="Self.MachineVariables" FromRole="Machines" ToRole="EnvironmentVariables" />
+    <NavigationProperty Name="ConfigVariables" Relationship="DevOpsModel.MachineConfigVariables" FromRole="Machine" ToRole="ConfigVariable" />
+  </EntityType>
+  <Association Name="FK_EnvironmentVariables_Enum_EnvironmentVariableType">
+    <End Role="Enum_EnvironmentVariableType" Type="Self.Enum_EnvironmentVariableType" Multiplicity="1" />
+    <End Role="EnvironmentVariables" Type="Self.EnvironmentVariable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Enum_EnvironmentVariableType">
+        <PropertyRef Name="name" />
+      </Principal>
+      <Dependent Role="EnvironmentVariables">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Machines_Enum_MachineUsageType">
+    <End Role="Enum_MachineUsageType" Type="Self.Enum_MachineUsageType" Multiplicity="1" />
+    <End Role="Machines" Type="Self.Machine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Enum_MachineUsageType">
+        <PropertyRef Name="name" />
+      </Principal>
+      <Dependent Role="Machines">
+        <PropertyRef Name="usage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MachineGroupMapping">
+    <End Role="MachineGroup" Type="Self.MachineGroup" Multiplicity="*" />
+    <End Role="Machines" Type="Self.Machine" Multiplicity="*" />
+  </Association>
+  <Association Name="MachineVariables">
+    <End Role="EnvironmentVariables" Type="Self.EnvironmentVariable" Multiplicity="*" />
+    <End Role="Machines" Type="Self.Machine" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Enum_EnvironmentVariableType" EntityType="Self.Enum_EnvironmentVariableType" />
+    <EntitySet Name="Enum_MachineUsageType" EntityType="Self.Enum_MachineUsageType" />
+    <EntitySet Name="EnvironmentVariables" EntityType="Self.EnvironmentVariable" />
+    <EntitySet Name="MachineGroups" EntityType="Self.MachineGroup" />
+    <EntitySet Name="Machines" EntityType="Self.Machine" />
+    <AssociationSet Name="FK_EnvironmentVariables_Enum_EnvironmentVariableType" Association="Self.FK_EnvironmentVariables_Enum_EnvironmentVariableType">
+      <End Role="Enum_EnvironmentVariableType" EntitySet="Enum_EnvironmentVariableType" />
+      <End Role="EnvironmentVariables" EntitySet="EnvironmentVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Machines_Enum_MachineUsageType" Association="Self.FK_Machines_Enum_MachineUsageType">
+      <End Role="Enum_MachineUsageType" EntitySet="Enum_MachineUsageType" />
+      <End Role="Machines" EntitySet="Machines" />
+    </AssociationSet>
+    <AssociationSet Name="MachineGroupMapping" Association="Self.MachineGroupMapping">
+      <End Role="MachineGroup" EntitySet="MachineGroups" />
+      <End Role="Machines" EntitySet="Machines" />
+    </AssociationSet>
+    <AssociationSet Name="MachineVariables" Association="Self.MachineVariables">
+      <End Role="EnvironmentVariables" EntitySet="EnvironmentVariables" />
+      <End Role="Machines" EntitySet="Machines" />
+    </AssociationSet>
+    <EntitySet Name="ConfigVariables" EntityType="DevOpsModel.ConfigVariable" />
+    <AssociationSet Name="MachineConfigVariables" Association="DevOpsModel.MachineConfigVariables">
+      <End Role="ConfigVariable" EntitySet="ConfigVariables" />
+      <End Role="Machine" EntitySet="Machines" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ConfigVariable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="element" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="attribute" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="key" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="value_name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="application_name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="config_path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Machines" Relationship="DevOpsModel.MachineConfigVariables" FromRole="ConfigVariable" ToRole="Machine" />
+  </EntityType>
+  <Association Name="MachineConfigVariables">
+    <End Type="DevOpsModel.ConfigVariable" Role="ConfigVariable" Multiplicity="*" />
+    <End Type="DevOpsModel.Machine" Role="Machine" Multiplicity="*" />
+  </Association>
+</Schema>

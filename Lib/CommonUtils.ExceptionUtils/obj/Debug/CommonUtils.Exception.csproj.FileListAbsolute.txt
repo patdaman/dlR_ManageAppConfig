@@ -1,0 +1,5 @@
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.ExceptionUtils\bin\Debug\CommonUtils.Exception.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.ExceptionUtils\bin\Debug\CommonUtils.Exception.pdb
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.ExceptionUtils\obj\Debug\CommonUtils.Exception.dll
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.ExceptionUtils\obj\Debug\CommonUtils.Exception.pdb
+C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.ExceptionUtils\obj\Debug\CommonUtils.Exception.csprojResolveAssemblyReference.cache

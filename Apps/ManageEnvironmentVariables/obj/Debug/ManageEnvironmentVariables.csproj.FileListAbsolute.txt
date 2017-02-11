@@ -1,0 +1,4 @@
+C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\ManageEnvironmentVariables\bin\Debug\ManageEnvironmentVariables.exe.config
+C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\bin\Debug\ManageEnvironmentVariables.exe.config
+C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\obj\Debug\ManageEnvironmentVariables.csprojResolveAssemblyReference.cache
+C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\bin\Debug\ManageConfigVariables.exe.config
