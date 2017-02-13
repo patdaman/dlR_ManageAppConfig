@@ -172,7 +172,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AngularJS\Controller.js" />
+    <Content Include="AngularJS\MachineController.js" />
     <Content Include="AngularJS\Module.js" />
     <Content Include="AngularJS\Service.js" />
     <Content Include="Content\bootstrap.css" />

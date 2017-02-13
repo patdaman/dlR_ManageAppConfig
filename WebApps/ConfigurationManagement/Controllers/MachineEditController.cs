@@ -14,31 +14,55 @@ namespace ConfigurationManagement.Controllers
         BusinessLayer.ManageMachines machineProcessor = new BusinessLayer.ManageMachines();
 
         // GET: api/Machine
-        public IEnumerable<ViewModel.Machine> GetMachines()
+        public HttpResponseMessage GetMachines()
         {
-            return machineProcessor.GetAllMachines();
+            try
+            { 
+                return Request.CreateResponse<List<ViewModel.Machine>>(HttpStatusCode.OK, machineProcessor.GetAllMachines());
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse<Exception>(HttpStatusCode.BadRequest, ex);
+            }
         }
 
         // GET: api/Machine/5
-        public ViewModel.Machine Get(int id)
+        public HttpResponseMessage Get(int id)
         {
-            return machineProcessor.GetMachine(id);
+            try
+            {
+                return Request.CreateResponse<ViewModel.Machine>(HttpStatusCode.OK, machineProcessor.GetMachine(id));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse<Exception>(HttpStatusCode.BadRequest, ex);
+            }
         }
 
         // POST: api/Machine
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post(ViewModel.Machine value)
         {
-        }
-
-        // PUT: api/Machine/5
-        public void Put(int id, [FromBody]string value)
-        {
+            try
+            {
+                return Request.CreateResponse<ViewModel.Machine>(HttpStatusCode.OK, machineProcessor.CreateMachine(value));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse<Exception>(HttpStatusCode.BadRequest, ex);
+            }
         }
 
         // DELETE: api/Machine/5
-        public void Delete(int id)
+        public HttpResponseMessage Delete(int id)
         {
-
+            try
+            {
+                return Request.CreateResponse<ViewModel.Machine>(HttpStatusCode.OK, machineProcessor.DeleteMachine(id));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse<Exception>(HttpStatusCode.BadRequest, ex);
+            }
         }
     }
 }

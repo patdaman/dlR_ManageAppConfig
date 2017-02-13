@@ -3,5 +3,5 @@
 //We bind this module to view using ng-app directive.
 var myapp;
 (function () {
-    myapp = angular.module('myangularapp', []);
+    myapp = angular.module('ConfigurationManager', []);
 })();

@@ -32,7 +32,7 @@
                             <h3 class="text-info">Add New Machine</h3>
                         </div>
                         <div class="modal-body">
-                            @*Add New Employee form starts here...*@
+                            @*Add New machine form starts here...*@
                             <form class="form-horizontal" name="AddNewForm">
                                 <div class="form-group">
 
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        @*Employee Records*@
+        @*Machine Records*@
 
         <table class="table table-bordered">
             <thead style="background-color:lightgreen;">
@@ -104,108 +104,153 @@
             </tbody>
         </table>
         <div class="panel-footer">
-            Microsoft tech Developments
+            Marcom DevOps
         </div>
 
-        @*Upadate Employee records*@
+        @*Machine ConfigVariable Table*@
 
-        <div class="modal" id="Update" role="dialog">
+        <div class="modal" id="ConfigVars" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h3 class="text-info">Update Machine</h3>
+                        <h2 class="text-info">{{machine.name}}</h2>
+                        <h3 class="text-info">App Config Variables</h3>
                     </div>
                     <div class="modal-body">
-                        @*Update Employee form starts here...*@
-                        <form class="form-horizontal" name="UpdateMachineForm">
-                            <div class="form-group">
-
-                                <input class="form-control" readonly="readonly" name="EmpNo" ng-model="Updateid" type="hidden" placeholder="Employee Number" required />
-                            </div>
-                            <div class="form-group">
-                                <label class="text-info"> Machine Name</label>
-                                <input class="form-control" name="MachineName" ng-model="Updatemachine_name" type="text" placeholder="Machine Name" required />
-                            </div>
-                            <div class="form-group">
-                                <label class="text-info"> Location</label>
-                                <input class="form-control" name="Location" ng-model="Updatelocation" type="text" placeholder="Location" required />
-                            </div>
-                            <div class="form-group">
-                                <label class="text-info"> Usage</label>
-                                <input class="form-control" name="Usage" ng-model="Updateusage" type="text" placeholder="Usage" required />
-                            </div>
-                            <div class="form-group">
-                                <label class="text-info"> Create Date</label>
-                                <input class="form-control" name="Create Date" ng-model="Updatecreate_date" type="date" placeholder="Create Date" required />
-                            </div>
-                            <div class="form-group">
-                                <label class="text-info"> Modify Date</label>
-                                <input class="form-control" name="Modify Date" ng-model="Updatemodify_date" type="date" placeholder="Modify Date" required />
-                            </div>
-                            <div class="form-group">
-                                <label class="text-info"> Active</label>
-                                <input class="form-control" name="Active" ng-model="Updateactive" type="checkbox" placeholder="Active" required />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" id="btnUpdate" data-dismiss="modal" ng-click="update()">Update</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        @*Delete Employee record*@
-
-        <div class="modal" role="dialog" id="deleteDialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h3 class="text-info">Are you sure you want to delete the record?</h3>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <p>id:{{Updateid}}</p>
-                            <p>machine_name:{{Updatemachine_name}}</p>
-                            <p>location:{{Updatelocation}}</p>
-                            <p>usage:{{Updateusage}}</p>
-                            <p>create_date:{{Updatecreate_date}}</p>
-                            <p>modify_date:{{Updatemodify_date}}</p>
-                            <p>active:{{Updateactive}}</p>
+                        <table class="table table-bordered">
+                            <thead style="background-color:lightgreen;">
+                                <tr>
+                                    <th> Machine Name </th>
+                                    <th> Machine Name </th>
+                                    <th> Location </th>
+                                    <th> Usage </th>
+                                    <th> Create Date </th>
+                                    <th> Modify Date </th>
+                                    <th> Active </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="var in ConfigVars">
+                                    <td>{{var.id}}</td>
+                                    <td>{{var.machine_name}} </td>
+                                    <td>{{var.location}}</td>
+                                    <td>{{var.usage}}</td>
+                                    <td>{{var.create_date}}</td>
+                                    <td>{{var.modify_date}}</td>
+                                    <td>{{var.active}}</td>
+                                    <td style="width:200px;">
+                                        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#Update" ng-click="get(mach)">Update</a>
+                                        <a href="#" class="btn btn-danger" id="btnDelete" data-toggle="modal" data-target="#deleteDialog" ng-click="get(mach)">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" id="btnUpdate" data-dismiss="modal" ng-click="update()">Update</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="delete(Updateid)">Delete Record</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+            @*Upadate Machine records*@
+
+            <div class="modal" id="Update" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="text-info">Update Machine</h3>
+                        </div>
+                        <div class="modal-body">
+                            @*Update Form form starts here...*@
+                            <form class="form-horizontal" name="UpdateMachineForm">
+                                <div class="form-group">
+
+                                    <input class="form-control" readonly="readonly" name="EmpNo" ng-model="Updateid" type="hidden" placeholder="Employee Number" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-info"> Machine Name</label>
+                                    <input class="form-control" name="MachineName" ng-model="Updatemachine_name" type="text" placeholder="Machine Name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-info"> Location</label>
+                                    <input class="form-control" name="Location" ng-model="Updatelocation" type="text" placeholder="Location" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-info"> Usage</label>
+                                    <input class="form-control" name="Usage" ng-model="Updateusage" type="text" placeholder="Usage" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-info"> Create Date</label>
+                                    <input class="form-control" name="Create Date" ng-model="Updatecreate_date" type="date" placeholder="Create Date" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-info"> Modify Date</label>
+                                    <input class="form-control" name="Modify Date" ng-model="Updatemodify_date" type="date" placeholder="Modify Date" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-info"> Active</label>
+                                    <input class="form-control" name="Active" ng-model="Updateactive" type="checkbox" placeholder="Active" required />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" id="btnUpdate" data-dismiss="modal" ng-click="update()">Update</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*Delete Employee record*@
+
+            <div class="modal" role="dialog" id="deleteDialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="text-info">Are you sure you want to delete the record?</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <p>id:{{Updateid}}</p>
+                                <p>machine_name:{{Updatemachine_name}}</p>
+                                <p>location:{{Updatelocation}}</p>
+                                <p>usage:{{Updateusage}}</p>
+                                <p>create_date:{{Updatecreate_date}}</p>
+                                <p>modify_date:{{Updatemodify_date}}</p>
+                                <p>active:{{Updateactive}}</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="delete(Updateid)">Delete Record</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-</div>
 
-@section scripts{
-    <script src="~/AngularJS/Controller.js"></script>
-    <script src="~/AngularJS/Service.js"></script>
-    <script>
-    //sweet alert script starts here...
-    document.querySelector("#btnSave").onclick = function () {
-        swal("Machine Record inserted successfully");
-    }
-    document.querySelector("#btnDelete").onclick = function () {
-        swal({
-            title: "Are you sure want to delete?",
-            text: "The record will be deleted permanetly",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, delete it!"
-        });
-    };
-    </script>
-}
+                @section scripts{
+                    <script src="~/AngularJS/Controller.js"></script>
+                    <script src="~/AngularJS/Service.js"></script>
+                    <script>
+                        //sweet alert script starts here...
+                        document.querySelector("#btnSave").onclick = function () {
+                            swal("Machine Record inserted successfully");
+                        }
+                        document.querySelector("#btnDelete").onclick = function () {
+                            swal({
+                                title: "Are you sure want to delete?",
+                                text: "The record will be deleted permanetly",
+                                type: "warning",
+                                showCancelButton: true,
+                                confirmButtonColor: "#DD6B55",
+                                confirmButtonText: "Yes, delete it!"
+                            });
+                        };
+                    </script>
+                }

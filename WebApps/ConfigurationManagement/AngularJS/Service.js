@@ -2,14 +2,14 @@
 myapp.service('crudservice', function ($http) {
 
     this.getAllMachines = function () {
-        return $http.get("/api/MachineAPI");
+        return $http.get("/api/Machine");
     }
 
     //save
     this.save = function (Machine) {
         var request = $http({
             method: 'post',
-            url: '/api/MachineAPI/',
+            url: '/api/Machine/',
             data: Machine
         });
         return request;
@@ -18,7 +18,7 @@ myapp.service('crudservice', function ($http) {
     //get single record by Id
     this.get = function (id) {
         //debugger;
-        return $http.get("/api/MachineAPI/" + id);
+        return $http.get("/api/Machine/" + id);
     }
 
     //update Machine records
@@ -26,7 +26,7 @@ myapp.service('crudservice', function ($http) {
         //debugger;
         var updaterequest = $http({
             method: 'put',
-            url: "/api/MachineAPI/" + UpdateId,
+            url: "/api/Machine/" + UpdateId,
             data: Machine
         });
         return updaterequest;
@@ -37,7 +37,7 @@ myapp.service('crudservice', function ($http) {
         debugger;
         var deleterecord = $http({
             method: 'delete',
-            url: "/api/MachineAPI/" + UpdateId
+            url: "/api/Machine/" + UpdateId
         });
         return deleterecord;
     }

@@ -19,3 +19,6 @@ C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\bin\D
 C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\bin\Debug\EntityFramework.xml
 C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\obj\Debug\ManageConfigVariables.exe
 C:\Users\pdelosreyes\Documents\Development\Apps\ManageEnvironmentVariables\obj\Debug\ManageConfigVariables.pdb
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\ManageEnvironmentVariables\bin\Debug\ManageConfigVariables.exe.config
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\ManageEnvironmentVariables\obj\Debug\ManageConfigVariables.exe
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\ManageEnvironmentVariables\obj\Debug\ManageConfigVariables.pdb

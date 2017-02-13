@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ViewModel;
 
 namespace BusinessLayer
 {
@@ -48,6 +49,16 @@ namespace BusinessLayer
                 active = EFMachine.active
             };
             return machineModel;
+        }
+
+        public ViewModel.Machine CreateMachine(ViewModel.Machine machine)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ViewModel.Machine DeleteMachine(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
