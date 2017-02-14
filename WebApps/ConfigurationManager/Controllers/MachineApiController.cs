@@ -11,7 +11,7 @@ namespace ConfigurationManager.Controllers
         BusinessLayer.ManageMachines machineProcessor = new BusinessLayer.ManageMachines();
 
         // GET: api/Machine
-        public HttpResponseMessage GetMachines()
+        public HttpResponseMessage Get()
         {
             try
             {
@@ -29,6 +29,18 @@ namespace ConfigurationManager.Controllers
             try
             {
                 return Request.CreateResponse<ViewModel.Machine>(HttpStatusCode.OK, machineProcessor.GetMachine(id));
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse<Exception>(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+        public HttpResponseMessage Put(ViewModel.Machine value)
+        {
+            try
+            {
+                return Request.CreateResponse<ViewModel.Machine>(HttpStatusCode.OK, machineProcessor.UpdateMachine(value));
             }
             catch (Exception ex)
             {

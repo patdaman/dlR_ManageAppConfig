@@ -24,6 +24,17 @@ namespace ViewModel
         public Nullable<System.DateTime> modify_date { get; set; }
     }
 
+    public class Application
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string release { get; set; }
+        public System.DateTime create_date { get; set; }
+        public int configVariable_id { get; set; }
+        public Nullable<System.DateTime> modify_date { get; set; }
+        public bool active { get; set; }
+    }
+
     public class ConfigVariable
     {
         public int id { get; set; }
@@ -32,7 +43,7 @@ namespace ViewModel
         public string key { get; set; }
         public string value_name { get; set; }
         public string value { get; set; }
-        public string application_name { get; set; }
+        public int application_id { get; set; }
         public string config_path { get; set; }
         public System.DateTime create_date { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }

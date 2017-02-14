@@ -17,7 +17,7 @@ namespace EFDataModel.DevOps
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ConfigVariable()
         {
-            this.Machines = new HashSet<Machine>();
+            this.Applications = new HashSet<Application>();
         }
     
         public int id { get; set; }
@@ -26,13 +26,13 @@ namespace EFDataModel.DevOps
         public string key { get; set; }
         public string value_name { get; set; }
         public string value { get; set; }
-        public string application_name { get; set; }
+        public int application_id { get; set; }
         public string config_path { get; set; }
         public System.DateTime create_date { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Machine> Machines { get; set; }
+        public virtual ICollection<Application> Applications { get; set; }
     }
 }

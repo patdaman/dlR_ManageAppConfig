@@ -17,9 +17,9 @@ namespace EFDataModel.DevOps
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Machine()
         {
+            this.Applications = new HashSet<Application>();
             this.MachineGroups = new HashSet<MachineGroup>();
             this.EnvironmentVariables = new HashSet<EnvironmentVariable>();
-            this.ConfigVariables = new HashSet<ConfigVariable>();
         }
     
         public int id { get; set; }
@@ -30,12 +30,11 @@ namespace EFDataModel.DevOps
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
     
-        public virtual Enum_MachineUsageType Enum_MachineUsageType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Application> Applications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MachineGroup> MachineGroups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EnvironmentVariable> EnvironmentVariables { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ConfigVariable> ConfigVariables { get; set; }
     }
 }

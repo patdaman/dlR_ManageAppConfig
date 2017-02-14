@@ -12,11 +12,13 @@ namespace EFDataModel.DevOps
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DevOpsEntities : DbContext
     {
         public DevOpsEntities()
-            : base("name=Entities")
+            : base("name=DevOpsEntities")
         {
         }
     
@@ -25,11 +27,68 @@ namespace EFDataModel.DevOps
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Enum_EnvironmentVariableType> Enum_EnvironmentVariableType { get; set; }
-        public virtual DbSet<Enum_MachineUsageType> Enum_MachineUsageType { get; set; }
+        public virtual DbSet<Application> Applications { get; set; }
+        public virtual DbSet<ConfigVariable> ConfigVariables { get; set; }
         public virtual DbSet<EnvironmentVariable> EnvironmentVariables { get; set; }
         public virtual DbSet<MachineGroup> MachineGroups { get; set; }
         public virtual DbSet<Machine> Machines { get; set; }
-        public virtual DbSet<ConfigVariable> ConfigVariables { get; set; }
+    
+        public virtual int usp_SearchAuditTablesForInvalidUser(string validUserPrefix, string validCommaSeparatedList, string invalidCommaSeparatedList, string validSchemaCommaSeparatedList, string invalidSchemaCommaSeparatedList, string validTableCommaSeparatedList, string invalidTableCommaSeparatedList, Nullable<bool> printQuery, Nullable<bool> deleteRows)
+        {
+            var validUserPrefixParameter = validUserPrefix != null ?
+                new ObjectParameter("ValidUserPrefix", validUserPrefix) :
+                new ObjectParameter("ValidUserPrefix", typeof(string));
+    
+            var validCommaSeparatedListParameter = validCommaSeparatedList != null ?
+                new ObjectParameter("ValidCommaSeparatedList", validCommaSeparatedList) :
+                new ObjectParameter("ValidCommaSeparatedList", typeof(string));
+    
+            var invalidCommaSeparatedListParameter = invalidCommaSeparatedList != null ?
+                new ObjectParameter("InvalidCommaSeparatedList", invalidCommaSeparatedList) :
+                new ObjectParameter("InvalidCommaSeparatedList", typeof(string));
+    
+            var validSchemaCommaSeparatedListParameter = validSchemaCommaSeparatedList != null ?
+                new ObjectParameter("ValidSchemaCommaSeparatedList", validSchemaCommaSeparatedList) :
+                new ObjectParameter("ValidSchemaCommaSeparatedList", typeof(string));
+    
+            var invalidSchemaCommaSeparatedListParameter = invalidSchemaCommaSeparatedList != null ?
+                new ObjectParameter("InvalidSchemaCommaSeparatedList", invalidSchemaCommaSeparatedList) :
+                new ObjectParameter("InvalidSchemaCommaSeparatedList", typeof(string));
+    
+            var validTableCommaSeparatedListParameter = validTableCommaSeparatedList != null ?
+                new ObjectParameter("ValidTableCommaSeparatedList", validTableCommaSeparatedList) :
+                new ObjectParameter("ValidTableCommaSeparatedList", typeof(string));
+    
+            var invalidTableCommaSeparatedListParameter = invalidTableCommaSeparatedList != null ?
+                new ObjectParameter("InvalidTableCommaSeparatedList", invalidTableCommaSeparatedList) :
+                new ObjectParameter("InvalidTableCommaSeparatedList", typeof(string));
+    
+            var printQueryParameter = printQuery.HasValue ?
+                new ObjectParameter("PrintQuery", printQuery) :
+                new ObjectParameter("PrintQuery", typeof(bool));
+    
+            var deleteRowsParameter = deleteRows.HasValue ?
+                new ObjectParameter("DeleteRows", deleteRows) :
+                new ObjectParameter("DeleteRows", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_SearchAuditTablesForInvalidUser", validUserPrefixParameter, validCommaSeparatedListParameter, invalidCommaSeparatedListParameter, validSchemaCommaSeparatedListParameter, invalidSchemaCommaSeparatedListParameter, validTableCommaSeparatedListParameter, invalidTableCommaSeparatedListParameter, printQueryParameter, deleteRowsParameter);
+        }
+    
+        public virtual int usp_ViewErrorTables(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate, Nullable<int> rows)
+        {
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("EndDate", endDate) :
+                new ObjectParameter("EndDate", typeof(System.DateTime));
+    
+            var rowsParameter = rows.HasValue ?
+                new ObjectParameter("Rows", rows) :
+                new ObjectParameter("Rows", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ViewErrorTables", startDateParameter, endDateParameter, rowsParameter);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CommonUtils.AppConfiguration;
 using EFDataModel.DevOps;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -158,18 +159,35 @@ namespace ManageConfigVariables
         ///
         /// <returns>   A List&lt;AttributeKeyValuePair&gt; </returns>
         ///-------------------------------------------------------------------------------------------------
-        public List<AttributeKeyValuePair> ListAllAppConfigVariablesFromDb()
+        public List<AttributeKeyValuePair> ListAllAppConfigVariablesFromDb(int? appId = null)
         {
             var keyValues = new List<AttributeKeyValuePair>();
-            var appEFValues = new List<AttributeKeyValuePair>();
+            ICollection<Application> applications;
 
-            var EFconfigKeys = (from vars in DevOpsContext.Machines
-                                where vars.machine_name == machineName
-                                select vars.ConfigVariables).FirstOrDefault();
-
-            foreach (var dbKey in EFconfigKeys)
+            if (appId == null)
             {
-                if (dbKey.application_name == appName)
+                applications = (from app in DevOpsContext.Applications
+                                   where app.Machines.Contains(
+                                        (from mac in DevOpsContext.Machines
+                                            where mac.machine_name == machineName
+                                            select mac).FirstOrDefault()
+                                        )
+                                   select app).ToList();
+            }
+            else
+            {
+                applications = (from app in DevOpsContext.Applications
+                                where app.Machines.Contains(
+                                     (from mac in DevOpsContext.Machines
+                                      where mac.machine_name == machineName
+                                      select mac).FirstOrDefault()
+                                     )
+                                where app.id == appId
+                                select app).ToList();
+            }
+            foreach (var app in applications)
+            {
+                foreach (var dbKey in app.ConfigVariables)
                 {
                     var keyValue = appConfigVars.GetKeyValue(dbKey.attribute, dbKey.key);
                     keyValues.Add(keyValue);
@@ -198,20 +216,42 @@ namespace ManageConfigVariables
         ///
         /// <returns>   A List&lt;ConfigModifyResult&gt; </returns>
         ///-------------------------------------------------------------------------------------------------
-        public List<ConfigModifyResult> RemoveAllAppConfigVariables()
+        public List<ConfigModifyResult> RemoveAllAppConfigVariables(int? appId = null)
         {
             var resultList = new List<ConfigModifyResult>();
 
-            var EFconfigKeys = (from vars in DevOpsContext.Machines
-                                where vars.machine_name == machineName
-                                select vars.ConfigVariables).FirstOrDefault();
+            ICollection<Application> applications;
 
-            foreach (var dbKey in EFconfigKeys)
+            if (appId == null)
             {
-                if (dbKey.application_name == appName
-                    && dbKey.active == true)
+                applications = (from app in DevOpsContext.Applications
+                                where app.Machines.Contains(
+                                     (from mac in DevOpsContext.Machines
+                                      where mac.machine_name == machineName
+                                      select mac).FirstOrDefault()
+                                     )
+                                select app).ToList();
+            }
+            else
+            {
+                applications = (from app in DevOpsContext.Applications
+                                where app.Machines.Contains(
+                                     (from mac in DevOpsContext.Machines
+                                      where mac.machine_name == machineName
+                                      select mac).FirstOrDefault()
+                                     )
+                                where app.id == appId
+                                select app).ToList();
+            }
+            foreach (var app in applications)
+            {
+                foreach (var dbKey in app.ConfigVariables)
                 {
-                    resultList.Add(new ConfigModifyResult() { key = dbKey.key, result = appConfigVars.RemoveKeyValue(dbKey.attribute, dbKey.key) });
+                    // May not be necessary since inactive keys can be removed anyways
+                    // if (dbKey.active == true)
+                    {
+                        resultList.Add(new ConfigModifyResult() { key = dbKey.key, result = appConfigVars.RemoveKeyValue(dbKey.attribute, dbKey.key) });
+                    }
                 }
             }
             return resultList;
@@ -224,17 +264,40 @@ namespace ManageConfigVariables
         ///
         /// <returns>   A List&lt;ConfigModifyResult&gt; </returns>
         ///-------------------------------------------------------------------------------------------------
-        public List<ConfigModifyResult> AddAllAppConfigVariables()
+        public List<ConfigModifyResult> AddAllAppConfigVariables(int? appId = null)
         {
             var resultList = new List<ConfigModifyResult>();
 
-            var EFConfigKeys = (from vars in DevOpsContext.Machines
-                                where vars.machine_name == machineName
-                                select vars.ConfigVariables).FirstOrDefault();
+            ICollection<Application> applications;
 
-            foreach (var dbKey in EFConfigKeys)
+            if (appId == null)
             {
-                resultList.Add(new ConfigModifyResult() { key = dbKey.key, result = appConfigVars.UpdateOrCreateAppSetting(dbKey.attribute, dbKey.key, dbKey.value_name, dbKey.value, dbKey.element) });
+                applications = (from app in DevOpsContext.Applications
+                                where app.Machines.Contains(
+                                     (from mac in DevOpsContext.Machines
+                                      where mac.machine_name == machineName
+                                      select mac).FirstOrDefault()
+                                     )
+                                select app).ToList();
+            }
+            else
+            {
+                applications = (from app in DevOpsContext.Applications
+                                where app.Machines.Contains(
+                                     (from mac in DevOpsContext.Machines
+                                      where mac.machine_name == machineName
+                                      select mac).FirstOrDefault()
+                                     )
+                                where app.id == appId
+                                select app).ToList();
+            }
+            foreach (var app in applications)
+            {
+                foreach (var dbKey in app.ConfigVariables)
+                {
+                    resultList.Add(new ConfigModifyResult() { key = dbKey.key, result = appConfigVars.UpdateOrCreateAppSetting(dbKey.attribute, dbKey.key, dbKey.value_name, dbKey.value, dbKey.element) });
+
+                }
             }
             return resultList;
         }

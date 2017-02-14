@@ -8,3 +8,7 @@ D:\Development\GitHub\dlR_ManageAppConfig\Lib\ViewModel\bin\Debug\ViewModel.pdb
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\ViewModel\obj\Debug\ViewModel.dll
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\ViewModel\obj\Debug\ViewModel.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\ViewModel\bin\Debug\ViewModel.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\ViewModel\bin\Debug\ViewModel.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\ViewModel\obj\Debug\ViewModel.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\ViewModel\obj\Debug\ViewModel.pdb

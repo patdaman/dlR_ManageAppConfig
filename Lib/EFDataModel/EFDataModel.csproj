@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DevOps\Application.cs">
+      <DependentUpon>DevOps.tt</DependentUpon>
+    </Compile>
     <Compile Include="DevOps\ConfigVariable.cs">
       <DependentUpon>DevOps.tt</DependentUpon>
     </Compile>
@@ -68,12 +71,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DevOps.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DevOps\Enum_EnvironmentVariableType.cs">
-      <DependentUpon>DevOps.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DevOps\Enum_MachineUsageType.cs">
-      <DependentUpon>DevOps.tt</DependentUpon>
     </Compile>
     <Compile Include="DevOps\EnvironmentVariable.cs">
       <DependentUpon>DevOps.tt</DependentUpon>

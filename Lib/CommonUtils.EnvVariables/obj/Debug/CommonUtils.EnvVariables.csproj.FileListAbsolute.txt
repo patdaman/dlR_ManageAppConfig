@@ -12,3 +12,10 @@ D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\bin\Debug
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\obj\Debug\CommonUtils.EnvVariables.csprojResolveAssemblyReference.cache
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\obj\Debug\CommonUtils.EnvVariables.dll
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\obj\Debug\CommonUtils.EnvVariables.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\bin\Debug\CommonUtils.EnvVariables.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\bin\Debug\CommonUtils.EnvVariables.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\bin\Debug\ViewModel.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\bin\Debug\ViewModel.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\obj\Debug\CommonUtils.EnvVariables.csprojResolveAssemblyReference.cache
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\obj\Debug\CommonUtils.EnvVariables.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.EnvVariables\obj\Debug\CommonUtils.EnvVariables.pdb

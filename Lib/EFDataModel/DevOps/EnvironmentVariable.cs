@@ -25,11 +25,11 @@ namespace EFDataModel.DevOps
         public string value { get; set; }
         public string type { get; set; }
         public string path { get; set; }
+        public string application_name { get; set; }
         public System.DateTime create_date { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
     
-        public virtual Enum_EnvironmentVariableType Enum_EnvironmentVariableType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Machine> Machines { get; set; }
     }

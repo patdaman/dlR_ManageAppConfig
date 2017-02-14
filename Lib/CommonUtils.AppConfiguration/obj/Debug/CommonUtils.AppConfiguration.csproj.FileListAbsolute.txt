@@ -12,3 +12,10 @@ D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\bin\D
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\obj\Debug\CommonUtils.AppConfiguration.csprojResolveAssemblyReference.cache
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\obj\Debug\SGNL.CommonUtils.AppConfiguration.dll
 D:\Development\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\obj\Debug\SGNL.CommonUtils.AppConfiguration.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\bin\Debug\SGNL.CommonUtils.AppConfiguration.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\bin\Debug\SGNL.CommonUtils.AppConfiguration.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\bin\Debug\ViewModel.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\bin\Debug\ViewModel.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\obj\Debug\CommonUtils.AppConfiguration.csprojResolveAssemblyReference.cache
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\obj\Debug\SGNL.CommonUtils.AppConfiguration.dll
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.AppConfiguration\obj\Debug\SGNL.CommonUtils.AppConfiguration.pdb
