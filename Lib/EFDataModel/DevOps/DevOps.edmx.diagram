@@ -4,13 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d2ee86f655aa49a8b2fec63a5b5a5c65" Name="Diagram1">
-        <EntityTypeShape EntityType="DevOpsModel.Application" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DevOpsModel.ConfigVariable" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DevOpsModel.EnvironmentVariable" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DevOpsModel.MachineGroup" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DevOpsModel.Machine" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+      <Diagram DiagramId="4567f84b887b408ea2dda4458aaa7b44" Name="Diagram1">
+        <EntityTypeShape EntityType="DevOpsModel.Application" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevOpsModel.ConfigVariable" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevOpsModel.Enum_EnvironmentVariableType" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevOpsModel.Enum_Locations" Width="1.5" PointX="6" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevOpsModel.Enum_MachineUsageType" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevOpsModel.EnvironmentVariable" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevOpsModel.MachineGroup" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevOpsModel.Machine" Width="1.5" PointX="8.25" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="DevOpsModel.FK_EnvironmentVariables_Enum_EnvironmentVariableType" ManuallyRouted="false" />
+        <AssociationConnector Association="DevOpsModel.FK_Machines_Enum_Locations" ManuallyRouted="false" />
+        <AssociationConnector Association="DevOpsModel.FK_Machines_Enum_MachineUsageType" ManuallyRouted="false" />
         <AssociationConnector Association="DevOpsModel.ApplicationConfigVariables" ManuallyRouted="false" />
+        <AssociationConnector Association="DevOpsModel.ApplicationEnvironmentVariables" ManuallyRouted="false" />
         <AssociationConnector Association="DevOpsModel.MachineApplications" ManuallyRouted="false" />
         <AssociationConnector Association="DevOpsModel.MachineGroupMapping" ManuallyRouted="false" />
         <AssociationConnector Association="DevOpsModel.MachineVariables" ManuallyRouted="false" />

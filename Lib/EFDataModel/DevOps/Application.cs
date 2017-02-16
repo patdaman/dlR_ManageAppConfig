@@ -18,6 +18,7 @@ namespace EFDataModel.DevOps
         public Application()
         {
             this.ConfigVariables = new HashSet<ConfigVariable>();
+            this.EnvironmentVariables = new HashSet<EnvironmentVariable>();
             this.Machines = new HashSet<Machine>();
         }
     
@@ -31,6 +32,8 @@ namespace EFDataModel.DevOps
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConfigVariable> ConfigVariables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EnvironmentVariable> EnvironmentVariables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Machine> Machines { get; set; }
     }

@@ -27,3 +27,4 @@ C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\EFDataModel\bin\De
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\EFDataModel\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\EFDataModel\obj\Debug\EFDataModel.dll
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\EFDataModel\obj\Debug\EFDataModel.pdb
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\EFDataModel\obj\Debug\EFDataModel.csprojResolveAssemblyReference.cache

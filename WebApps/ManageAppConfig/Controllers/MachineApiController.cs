@@ -11,15 +11,27 @@ namespace ManageAppConfig.Controllers
         BusinessLayer.ManageMachines machineProcessor = new BusinessLayer.ManageMachines();
 
         // GET: api/Machine
-        public HttpResponseMessage Get()
+        //public HttpResponseMessage Get()
+        //{
+        //    try
+        //    {
+        //        return Request.CreateResponse<List<ViewModel.Machine>>(HttpStatusCode.OK, machineProcessor.GetAllMachines());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Request.CreateResponse<Exception>(HttpStatusCode.BadRequest, ex);
+        //    }
+        //}
+
+        public List<ViewModel.Machine> Get()
         {
             try
             {
-                return Request.CreateResponse<List<ViewModel.Machine>>(HttpStatusCode.OK, machineProcessor.GetAllMachines());
+                return machineProcessor.GetAllMachines();
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse<Exception>(HttpStatusCode.BadRequest, ex);
+                return new List<ViewModel.Machine>();
             }
         }
 
