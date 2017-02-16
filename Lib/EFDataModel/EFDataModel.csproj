@@ -72,6 +72,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DevOps.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DevOps\Enum_EnvironmentVariableType.cs">
+      <DependentUpon>DevOps.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DevOps\Enum_Locations.cs">
+      <DependentUpon>DevOps.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DevOps\Enum_MachineUsageType.cs">
+      <DependentUpon>DevOps.tt</DependentUpon>
+    </Compile>
     <Compile Include="DevOps\EnvironmentVariable.cs">
       <DependentUpon>DevOps.tt</DependentUpon>
     </Compile>

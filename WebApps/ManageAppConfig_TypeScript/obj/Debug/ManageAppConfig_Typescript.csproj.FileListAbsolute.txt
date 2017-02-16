@@ -1,0 +1,1 @@
+C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\WebApps\ManageAppConfig_TypeScript\obj\Debug\ManageAppConfig_Typescript.csprojResolveAssemblyReference.cache

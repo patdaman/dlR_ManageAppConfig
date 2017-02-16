@@ -30,6 +30,8 @@ namespace EFDataModel.DevOps
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
     
+        public virtual Enum_Locations Enum_Locations { get; set; }
+        public virtual Enum_MachineUsageType Enum_MachineUsageType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -18,7 +18,7 @@ namespace EFDataModel.DevOps
     public partial class DevOpsEntities : DbContext
     {
         public DevOpsEntities()
-            : base("name=DevOpsEntities")
+            : base("name=Entities")
         {
         }
     
@@ -29,6 +29,9 @@ namespace EFDataModel.DevOps
     
         public virtual DbSet<Application> Applications { get; set; }
         public virtual DbSet<ConfigVariable> ConfigVariables { get; set; }
+        public virtual DbSet<Enum_EnvironmentVariableType> Enum_EnvironmentVariableType { get; set; }
+        public virtual DbSet<Enum_Locations> Enum_Locations { get; set; }
+        public virtual DbSet<Enum_MachineUsageType> Enum_MachineUsageType { get; set; }
         public virtual DbSet<EnvironmentVariable> EnvironmentVariables { get; set; }
         public virtual DbSet<MachineGroup> MachineGroups { get; set; }
         public virtual DbSet<Machine> Machines { get; set; }

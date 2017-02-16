@@ -26,7 +26,6 @@ namespace EFDataModel.DevOps
         public string key { get; set; }
         public string value_name { get; set; }
         public string value { get; set; }
-        public int application_id { get; set; }
         public string config_path { get; set; }
         public System.DateTime create_date { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }
