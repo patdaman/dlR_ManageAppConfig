@@ -316,6 +316,7 @@
     <TypeScriptCompile Include="AngularJS\Models\Machine.ts" />
     <TypeScriptCompile Include="AngularJS\Models\MachineGroup.ts" />
     <TypeScriptCompile Include="AngularJS\Services\EnumListService.ts" />
+    <TypeScriptCompile Include="AngularJS\Services\MachineApiService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

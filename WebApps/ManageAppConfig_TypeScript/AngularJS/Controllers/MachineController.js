@@ -1,152 +1,43 @@
-﻿///-------------------------------------------------------------------------------------------------
+///-------------------------------------------------------------------------------------------------
 /// <summary>   A controller for handling billing suite app.s. </summary>
 ///
 /// <remarks>   Rphilavanh, 9/29/2015. </remarks>
 ///-------------------------------------------------------------------------------------------------
-
-
-module ManageAppConfig.Controller {
-
-    export class MachineController {
-
-        machineEditorGridOptions: uiGrid.IGridOptions = undefined;
-        httpServ: ng.IHttpService;
-        qServ: ng.IQService;
-
-        fromDate: Date;
-        toDate: Date;
-        fromDateString: string;
-        toDateString: string;
-        dateType: string;
-
-        identifier: string;
-        toolbarTemplate: any;
-        detailTemplate: any;
-        // dataGridSource: uiGrid.IGridInstance;
-        filterCaseNumber: string = "";
-
-        getData: Function;
-
-        enumService: Service.EnumListService;
-
-        billingAggregateEnum: any;
-        billingClassificationEnum: any;
-        billStatusEnum: any;
-
-        programGroupSelection: string;
-        billingAggregateSelection: string;
-        billingClassificationSelection: string;
-        billStatusSelection: string;
-
-        enumListReceived: boolean = false;
-
-        billTypeEnum: any;
-        homePlanEnum: any;
-        planTypeEnum: any;
-        networkEnum: any;
-        insuredRelationshipEnum: any;
-        genderEnum: any;
-
-        billTypeList: any;
-        homePlanList: any;
-        planTypeList: any;
-        networkList: any;
-        insuredRelationshipList: any;
-        genderList: any;
-
-        billTypeSelection: string;
-        homePlanSelection: string;
-        planTypeSelection: string;
-        networkSelection: string;
-        insuredRelationshipSelection: string;
-        genderSelection: string;
-
-        editRowDataModel: uiGrid.IGridRow;
-        dataModel: any;
-        exportFlag: boolean = false;
-
-        updateActionComment: string;
-        caseListStr: string;
-
-        ///-------------------------------------------------------------------------------------------------
-        /// <summary>   Constructor. </summary>
-        ///
-        /// <param name="$http">        The $http. </param>
-        /// <param name="$q">           The $q. </param>
-        /// <param name="PayorService"> The payor service. </param>
-        /// <param name="EnumService">  The enum service. </param>
-        ///-------------------------------------------------------------------------------------------------
-
-        constructor($rootScope, $http, $q,
-            {
-
-            this.caseEditorGridOptions = undefined;
-
-
-            this.httpServ = $http;
-            this.qServ = $q;
-
-            this.payorService = PayorService;
-            this.enumService = EnumService;
-            this.utilService = UtilService;
-
-            this.identifier = $rootScope.AppBuildStatus + "Case Editor";
-
-            this.toolbarTemplate = $("#toolbarTemplate").html();
-            this.detailTemplate = $("#detailTemplate").html();
-
-            this.dateType = "Completed Date";
-
-            this.toDate = new Date();
-            this.fromDate = new Date();
-            this.fromDate.setDate(this.toDate.getDate() - 7);
-
-            this.fromDateString = DateToUSString(this.fromDate);
-            this.toDateString = DateToUSString(this.toDate);
-
-            this.payorListReceived = false;
-            this.enumListReceived = false;
-
-            this.dataGridSource = this.initDataGridSource($http);
-
-            if (this.payorService.PayorsID2CodeMap) {
-                this.payorListRecdProc();
+var _this = this;
+var ManageAppConfig;
+(function (ManageAppConfig) {
+    var Controller;
+    (function (Controller) {
+        var MachineController = (function () {
+            function MachineController() {
+                this.machineEditorGridOptions = undefined;
+                // dataGridSource: uiGrid.IGridInstance;
+                this.filterCaseNumber = "";
+                this.enumListReceived = false;
+                this.exportFlag = false;
             }
-            else {
-                var current: CaseEditorController = this;
-                this.payorService.GetPayorsAsync().then(function (data) {
-                    current.payorListRecdProc();
-                }, function (reason) {
-                    console.log("Went to hell in a handbasket");
-                })
-            }
-
-            if (this.enumService.EnumServiceReady) {
-                this.enumListRecdProc();
-            }
-            else {
-                var current: CaseEditorController = this;
-                this.enumService.PopulateEnumListsAsync().then(function (data) {
-                    current.enumListRecdProc();
-                }, function (reason) {
-                    console.log("Error loading enums");
-                })
-            }
+            MachineController.prototype.if = ;
+            return MachineController;
+        }());
+        Controller.MachineController = MachineController;
+        this.enumService.EnumServiceReady;
+        {
+            this.enumListRecdProc();
         }
-
-        ///-------------------------------------------------------------------------------------------------
-        /// <summary>   Initialises the data grid source. </summary>
-        ///
-        /// <remarks>   Rphilavanh, 9/29/2015. </remarks>
-        ///
-        /// <param name="$http">    The $http. </param>
-        ///
-        /// <returns>   A kendo.data.DataSource. </returns>
-        ///-------------------------------------------------------------------------------------------------
-
-        private initDataGridSource($http): kendo.data.DataSource {
+        {
+            var current = this;
+            this.enumService.PopulateEnumListsAsync().then(function (data) {
+                current.enumListRecdProc();
+            }, function (reason) {
+                console.log("Error loading enums");
+            });
+        }
+    })(Controller = ManageAppConfig.Controller || (ManageAppConfig.Controller = {}));
+})(ManageAppConfig || (ManageAppConfig = {}));
+initDataGridSource($http);
+kendo.data.DataSource;
+{
     var apirelpath = "api:/BillingStatusCases";
-
     this.dataModel = kendo.data.Model.define({
         id: "CaseNumber",
         fields: {
@@ -166,7 +57,6 @@ module ManageAppConfig.Controller {
             DateofService: { editable: false, type: "date" },
             OrderDate: { editable: false, type: "date" },
             CompletedDate: { editable: false, type: "date" },
-
             BillingClassification: { editable: true },
             BillType: { editable: true },
             PayorId1: { editable: true },
@@ -183,10 +73,8 @@ module ManageAppConfig.Controller {
             InsuredRelationship2: { editable: true },
             PayorGroupNumber2: { editable: true },
             PayorPolicyNumber2: { editable: true },
-
             PlaceOfService1: { editable: false },
             PlaceOfService2: { editable: false },
-
             Subscriber1FirstName: { editable: true },
             Subscriber1MiddleName: { editable: true },
             Subscriber1LastName: { editable: true },
@@ -199,7 +87,6 @@ module ManageAppConfig.Controller {
             Subscriber1PostalCode: { editable: true },
             Subscriber1Country: { editable: true },
             Subscriber1PhoneNumber: { editable: true },
-
             Subscriber2FirstName: { editable: true },
             Subscriber2MiddleName: { editable: true },
             Subscriber2LastName: { editable: true },
@@ -212,122 +99,79 @@ module ManageAppConfig.Controller {
             Subscriber2PostalCode: { editable: true },
             Subscriber2Country: { editable: true },
             Subscriber2PhoneNumber: { editable: true },
-
             LastCaseEdit: { editable: false, type: "date" },
             LastCaseEditUser: { editable: false },
         }
-
     });
-
-
-    var ds: kendo.data.DataSource = CreateGridDataSource($http, 20, this.dataModel,
-        {
-            read: () => {
-                this.updateActionComment = null;
-                return apirelpath + this.apiBody;
-            },
-            update: () => {
-                this.updateActionComment = null;
-                return apirelpath;
-            }
-
-        });
-
+    var ds = CreateGridDataSource($http, 20, this.dataModel, {
+        read: function () {
+            _this.updateActionComment = null;
+            return apirelpath + _this.apiBody;
+        },
+        update: function () {
+            _this.updateActionComment = null;
+            return apirelpath;
+        }
+    });
     return ds;
-
 }
-
-        ///-------------------------------------------------------------------------------------------------
-        /// <summary>   Gets a data. </summary>
-        ///
-        /// <remarks>   Rphilavanh, 9/29/2015. </remarks>
-        ///
-        /// <param name="event">    The event. </param>
-        ///
-        /// <returns>   The data. </returns>
-        ///-------------------------------------------------------------------------------------------------
-
-        public GetData(event) {
-
-    var thirdArg: string;
+GetData(event);
+{
+    var thirdArg;
     if (this.dateType == "Order Date")
         thirdArg = "&datetype=" + "orderdate";
-
     else
         thirdArg = "&datetype=" + "completeddate";
-
     this.apiBody = "?fromDate=" + this.fromDateString + "&toDate=" + moment(this.toDateString).add(1, 'days').format('MM/DD/YYYY') + thirdArg;
-
     this.dataGridSource.read();
 }
-
-
-        public CancelUpdate(event) {
+CancelUpdate(event);
+{
     this.dataGridSource.cancelChanges();
 }
-
-        private payorListRecdProc() {
+payorListRecdProc();
+{
     this.payorsList = this.payorService.PayorsID2NameMap;
     this.payorCodesList = this.payorService.PayorsID2CodeMap;
     this.payorListReceived = true;
     this.CallGridInit();
 }
-
-        ///-------------------------------------------------------------------------------------------------
-        /// <summary>   Enum list received proc. </summary>
-        ///
-        /// <remarks>   Rphilavanh, 9/29/2015. </remarks>
-        ///
-        /// <returns>   . </returns>
-        ///-------------------------------------------------------------------------------------------------
-
-        private enumListRecdProc() {
-    var enumlink: Model.EnumLinkModel;
+enumListRecdProc();
+{
+    var enumlink;
     enumlink = this.enumService.GetEnumLink("BillStatus");
     this.billStatusEnum = enumlink.EnumMap;
     this.billStatusList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("ProgramGroup");
     this.programGroupEnum = enumlink.EnumMap;
     this.programGroupList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("BillingClassification");
     this.billingClassificationEnum = enumlink.EnumMap;
     this.billingClassificationList = enumlink.EnumList;
-
-
     enumlink = this.enumService.GetEnumLink("BillingAggregate");
     this.billingAggregateEnum = enumlink.EnumMap;
     this.billingAggregateList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("BillType");
     this.billTypeEnum = enumlink.EnumMap;
     this.billTypeList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("HomePlan");
     this.homePlanEnum = enumlink.EnumMap;
     this.homePlanList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("PlanType");
     this.planTypeEnum = enumlink.EnumMap;
     this.planTypeList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("Network");
     this.networkEnum = enumlink.EnumMap;
     this.networkList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("InsuredRelationship");
     this.insuredRelationshipEnum = enumlink.EnumMap;
     this.insuredRelationshipList = enumlink.EnumList;
-
     enumlink = this.enumService.GetEnumLink("Gender");
     this.genderEnum = enumlink.EnumMap;
     this.genderList = enumlink.EnumList;
-
     this.enumListReceived = true;
     this.CallGridInit();
 }
-
 ///-------------------------------------------------------------------------------------------------
 /// <summary>   Call grid initialise. </summary>
 ///
@@ -335,16 +179,15 @@ module ManageAppConfig.Controller {
 ///
 /// <returns>   . </returns>
 ///-------------------------------------------------------------------------------------------------
-
-CallGridInit() {
+CallGridInit();
+{
     if (this.payorListReceived && this.enumListReceived) {
-        var current: CaseEditorController = this;
+        var current = this;
         current.payorListReceived = true;
         //current.initGrid();
         current.initGridAlt();
     }
 }
-
 ///-------------------------------------------------------------------------------------------------
 /// <summary>   Initialises the grid. </summary>
 ///
@@ -352,9 +195,8 @@ CallGridInit() {
 ///
 /// <returns>   . </returns>
 ///-------------------------------------------------------------------------------------------------
-
-initGrid() {
-
+initGrid();
+{
     this.caseEditorGridOptions = {
         dataSource: this.dataGridSource,
         scrollable: true,
@@ -380,7 +222,6 @@ initGrid() {
             { "field": "ClientName", "title": "Client" },
             { "field": "DoctorNPI", "title": "Doctor NPI" },
             { "field": "PatientMRN", "title": "MRN" },
-
             { "field": "PayorId1", "title": "Payor 1", values: this.payorCodesList },
             { "field": "PayorGroup1", "title": "Payor Group" },
             { "field": "HomePlan1", "title": "Home Plan", values: this.homePlanList },
@@ -388,7 +229,6 @@ initGrid() {
             { "field": "InsuredRelationship1", "title": "Relationship", values: this.insuredRelationshipEnum },
             { "field": "PayorGroupPolicyNumber1", "title": "Group #" },
             { "field": "PayorPolicyNumber1", "title": "Policy #" },
-
             { "field": "InsuredFirstName1", "title": "Insured First Name" },
             { "field": "InsuredMiddleName1", "title": "Insured Middle Name" },
             { "field": "InsuredLastName1", "title": "Insured Last Name" },
@@ -401,7 +241,6 @@ initGrid() {
             { "field": "InsuredPostalCode1", "title": "Insured ZIP" },
             { "field": "InsuredCountryCode1", "title": "Insured Country" },
             { "field": "InsuredPhone1", "title": "Insured Phone" },
-
             { "field": "PayorId2", "title": "Payor 2", values: this.payorCodesList },
             { "field": "PayorGroup2", "title": "Payor Group" },
             { "field": "HomePlan2", "title": "Home Plan", values: this.homePlanList },
@@ -409,7 +248,6 @@ initGrid() {
             { "field": "InsuredRelationship2", "title": "Relationship", values: this.insuredRelationshipList },
             { "field": "PayorGroupPolicyNumber2", "title": "Group #" },
             { "field": "PayorPolicyNumber2", "title": "Policy #" },
-
             { "field": "InsuredFirstName2", "title": "Insured First Name" },
             { "field": "InsuredMiddleName2", "title": "Insured Middle Name" },
             { "field": "InsuredLastName2", "title": "Insured Last Name" },
@@ -422,55 +260,37 @@ initGrid() {
             { "field": "InsuredPostalCode2", "title": "Insured ZIP" },
             { "field": "InsuredCountryCode2", "title": "Insured Country" },
             { "field": "InsuredPhone2", "title": "Insured Phone" },
-
         ],
         editable: "inline"
-    }
-
+    };
 }
-
-        ///-------------------------------------------------------------------------------------------------
-        /// <summary>   Handles the dropdown detail </summary>
-        ///
-        /// <remarks>   Ssur, 20151001. DO NOT CHANGE WITHOUT ASKING ME</remarks>
-        ///
-        /// <param name="e">    The unknown to process. </param>
-        ///
-        /// <returns>   . </returns>
-        ///-------------------------------------------------------------------------------------------------
-       
-        private handleDetailInit(e) {
+handleDetailInit(e);
+{
     var detailRow = e.detailRow;
     var masterRow = e.masterRow;
-    var originalModel: kendo.data.Model = e.data; //keep reference to the model
-    var grid: kendo.ui.Grid = e.sender;
+    var originalModel = e.data; //keep reference to the model
+    var grid = e.sender;
     //var viewCollection: kendo.data.ObservableArray = grid.dataSource.view(); // this does not work because it does not make the datasource dirty
-    var datacoll: kendo.data.ObservableArray = grid.dataSource.data();
-
+    var datacoll = grid.dataSource.data();
     var editableModel = new this.dataModel(originalModel.toJSON());
     var selectedModel = originalModel;
     kendo.bind(detailRow, editableModel);
     var ignorelist = ['_events', '_handlers', 'uid', 'dirty'];
     var current = this;
-
     detailRow.find(".case-details > .k-button.save").click(function () {
         if (editableModel.dirty) {
-
             var chgidx = datacoll.indexOf(selectedModel);
             var modmodel = datacoll[chgidx];
             var keys = Object.keys(editableModel);
-
             for (var i = 0; i < keys.length; i++) {
                 var key = keys[i];
                 if (ignorelist.indexOf(key) < 0) {
                     if (editableModel[key] != datacoll[chgidx][key]) {
                         datacoll[chgidx][key] = editableModel[key];
                         datacoll[chgidx]['dirty'] = true;
-
                     }
                 }
             }
-
             //datacoll.splice(datacoll.indexOf(selectedModel), 1, editableModel);
             try {
                 grid.dataSource.sync();
@@ -484,11 +304,8 @@ initGrid() {
                     throw (ex);
                 }
             }
-
-
         }
     });
-
     detailRow.find(".case-details > .k-button.cancel").click(function () {
         if (editableModel.dirty) {
             editableModel = new kendo.data.Model(originalModel.toJSON());
@@ -496,37 +313,46 @@ initGrid() {
         }
         grid.collapseRow(masterRow);
     });
-
 }
-        public TruncateString(val: any): string {
+TruncateString(val, any);
+string;
+{
     if (val == undefined)
         return "";
     return val.substring(0, 100);
 }
-        public DateStringer(val: any): string {
+DateStringer(val, any);
+string;
+{
     if (val == "" || val == undefined)
         return "";
     return val.toLocaleDateString();
 }
-        public DateTimeStringer(val: any): string {
+DateTimeStringer(val, any);
+string;
+{
     if (val == "" || val == undefined)
         return "";
-    return moment(val).format("MM/DD/YYYY HH:mm Z")
+    return moment(val).format("MM/DD/YYYY HH:mm Z");
 }
-        public EmptyUser(val: any): string {
+EmptyUser(val, any);
+string;
+{
     if (val == "" || val == undefined)
         return "<Nobody>";
     return val;
 }
-        public AddCommaIfNotEmpty(val: any): string {
+AddCommaIfNotEmpty(val, any);
+string;
+{
     if (val == "" || val == undefined)
         return "";
     return val + ",";
 }
-        public CheckDisallowBillStatusChange(billStatus: string): boolean {
+CheckDisallowBillStatusChange(billStatus, string);
+boolean;
+{
     if (billStatus == 'Billed' || billStatus == 'Closed')
         return true;
     return false;
-
-        }
 }
