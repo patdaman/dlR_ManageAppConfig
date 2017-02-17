@@ -85,5 +85,11 @@
     <Build Include="Stored Procedures\usp_SearchAuditTablesForInvalidUser.sql" />
     <Build Include="Stored Procedures\usp_ViewErrorTables.sql" />
     <Build Include="Security\config.sql" />
+    <Build Include="Security\Login1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DevOps.publish.xml" />
+    <None Include="DevOps.localhost.publish.xml" />
+    <None Include="SqlSchemaCompare_Localhost.scmp" />
   </ItemGroup>
 </Project>
