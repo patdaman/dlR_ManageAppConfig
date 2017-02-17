@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace ManageAppConfig.Areas.HelpPage.ModelDescriptions
+namespace ManageAppConfig_Typescript.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

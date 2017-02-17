@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using ManageAppConfig.Areas.HelpPage.ModelDescriptions;
+using ManageAppConfig_Typescript.Areas.HelpPage.ModelDescriptions;
 
-namespace ManageAppConfig.Areas.HelpPage.Models
+namespace ManageAppConfig_Typescript.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

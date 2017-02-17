@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using ManageAppConfig.Areas.HelpPage.ModelDescriptions;
+using ManageAppConfig_Typescript.Areas.HelpPage.ModelDescriptions;
 
-namespace ManageAppConfig.Areas.HelpPage
+namespace ManageAppConfig_Typescript.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

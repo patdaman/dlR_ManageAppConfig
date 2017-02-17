@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace ManageAppConfig.Areas.HelpPage.ModelDescriptions
+namespace ManageAppConfig_Typescript.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

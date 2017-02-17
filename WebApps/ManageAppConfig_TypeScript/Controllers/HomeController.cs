@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ManageAppConfig.Controllers
+namespace ManageAppConfig_Typescript.Controllers
 {
     public class HomeController : Controller
     {

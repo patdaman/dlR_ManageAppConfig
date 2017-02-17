@@ -18,7 +18,7 @@ namespace EFDataModel.DevOps
     public partial class DevOpsEntities : DbContext
     {
         public DevOpsEntities()
-            : base("name=Entities")
+            : base("name=DevOpsEntities")
         {
         }
     

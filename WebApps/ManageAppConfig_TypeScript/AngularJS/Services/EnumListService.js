@@ -3,8 +3,8 @@
 ///
 /// <remarks>   Pdelosreyes, 2/15/2017. </remarks>
 ///-------------------------------------------------------------------------------------------------
-var ManageAppConfig;
-(function (ManageAppConfig) {
+var ManageAppConfig_Typescript;
+(function (ManageAppConfig_Typescript) {
     var Service;
     (function (Service) {
         var EnumListService = (function () {
@@ -43,7 +43,7 @@ var ManageAppConfig;
                 var d = dresp;
                 for (var i = 0; i < d.length; i++) {
                     if (d[i].Active = 1) {
-                        var pm = new ManageAppConfig.Model.EnumListItemModel();
+                        var pm = new ManageAppConfig_Typescript.Model.EnumListItemModel();
                         pm.Active = d[i].Active;
                         pm.Description = d[i].Description;
                         pm.id = d[i].id;
@@ -126,5 +126,5 @@ var ManageAppConfig;
             return EnumListService;
         }());
         Service.EnumListService = EnumListService;
-    })(Service = ManageAppConfig.Service || (ManageAppConfig.Service = {}));
-})(ManageAppConfig || (ManageAppConfig = {}));
+    })(Service = ManageAppConfig_Typescript.Service || (ManageAppConfig_Typescript.Service = {}));
+})(ManageAppConfig_Typescript || (ManageAppConfig_Typescript = {}));

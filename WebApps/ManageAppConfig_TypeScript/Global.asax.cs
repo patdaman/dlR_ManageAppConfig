@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ManageAppConfig
+namespace ManageAppConfig_Typescript
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -58,7 +58,7 @@ namespace ManageAppConfig
             }
 
             var ex = Server.GetLastError();
-            var controller = new ManageAppConfig.Controllers.ErrorController();
+            var controller = new ManageAppConfig_Typescript.Controllers.ErrorController();
             var routeData = new RouteData();
             var action = "Index";
 

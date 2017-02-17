@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using ManageAppConfig.Areas.HelpPage.ModelDescriptions;
-using ManageAppConfig.Areas.HelpPage.Models;
+using ManageAppConfig_Typescript.Areas.HelpPage.ModelDescriptions;
+using ManageAppConfig_Typescript.Areas.HelpPage.Models;
 
-namespace ManageAppConfig.Areas.HelpPage.Controllers
+namespace ManageAppConfig_Typescript.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

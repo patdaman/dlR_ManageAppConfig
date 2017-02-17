@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace ManageAppConfig
+namespace ManageAppConfig_Typescript
 {
     public static class WebApiConfig
     {

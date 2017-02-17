@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ManageAppConfig")]
+[assembly: AssemblyTitle("ManageAppConfig_Typescript")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ManageAppConfig")]
+[assembly: AssemblyProduct("ManageAppConfig_Typescript")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7d28f762-3f56-4f59-bc95-d54d8015b89b")]
+[assembly: Guid("7d28f762-3f56-4f59-bc95-d54d8015b89c")]
 
 // Version information for an assembly consists of the following four values:
 //

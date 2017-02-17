@@ -1,5 +1,5 @@
-var ManageAppConfig;
-(function (ManageAppConfig) {
+var ManageAppConfig_Typescript;
+(function (ManageAppConfig_Typescript) {
     var Model;
     (function (Model) {
         var ConfigVariable = (function () {
@@ -8,5 +8,5 @@ var ManageAppConfig;
             return ConfigVariable;
         }());
         Model.ConfigVariable = ConfigVariable;
-    })(Model = ManageAppConfig.Model || (ManageAppConfig.Model = {}));
-})(ManageAppConfig || (ManageAppConfig = {}));
+    })(Model = ManageAppConfig_Typescript.Model || (ManageAppConfig_Typescript.Model = {}));
+})(ManageAppConfig_Typescript || (ManageAppConfig_Typescript = {}));

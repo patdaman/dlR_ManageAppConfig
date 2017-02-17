@@ -1,4 +1,4 @@
-namespace ManageAppConfig.Areas.HelpPage
+namespace ManageAppConfig_Typescript.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

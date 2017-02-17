@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace ManageAppConfig.Areas.HelpPage
+namespace ManageAppConfig_Typescript.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

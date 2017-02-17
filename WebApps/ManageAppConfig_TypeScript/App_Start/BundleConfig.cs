@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ManageAppConfig
+namespace ManageAppConfig_Typescript
 {
     public class BundleConfig
     {
@@ -24,13 +24,14 @@ namespace ManageAppConfig
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                      "~/Scripts/angular.min.js",
+                      "~/Scripts/angular.js",
+                      "~/Scripts/angular-route.js",
                       "~/Scripts/ui-grid.min.js")); 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/ui-grid.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }

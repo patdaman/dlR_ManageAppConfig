@@ -1,6 +1,6 @@
 using System;
 
-namespace ManageAppConfig.Areas.HelpPage.ModelDescriptions
+namespace ManageAppConfig_Typescript.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace ManageAppConfig.Areas.HelpPage
+namespace ManageAppConfig_Typescript.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

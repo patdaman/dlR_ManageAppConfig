@@ -1,6 +1,6 @@
 //Service to CRUD data from Machine API.
-var ManageAppConfig;
-(function (ManageAppConfig) {
+var ManageAppConfig_Typescript;
+(function (ManageAppConfig_Typescript) {
     var Service;
     (function (Service) {
         var MachineApiService = (function () {
@@ -73,5 +73,5 @@ var ManageAppConfig;
             return MachineApiService;
         }());
         Service.MachineApiService = MachineApiService;
-    })(Service = ManageAppConfig.Service || (ManageAppConfig.Service = {}));
-})(ManageAppConfig || (ManageAppConfig = {}));
+    })(Service = ManageAppConfig_Typescript.Service || (ManageAppConfig_Typescript.Service = {}));
+})(ManageAppConfig_Typescript || (ManageAppConfig_Typescript = {}));

@@ -3,9 +3,9 @@
 ///-------------------------------------------------------------------------------------------------
 'use strict';
 (function () {
-    var ApiPath = ManageAppConfig_Typescript.ApiPath;
-    var TitleTag = ManageAppConfig_Typescript.TitleTag;
-    var mainApp = angular.module('ManageAppConfig', ['ngRoute'])
+    var ApiPath = ManageAppConfig_Var.ApiPath;
+    var TitleTag = ManageAppConfig_Var.TitleTag;
+    var mainApp = angular.module('ManageAppConfig_Typescript', ['ngRoute'])
         .run(['$rootScope', function ($rootScope) {
             $rootScope.APIPath = ApiPath;
         }]);
@@ -93,10 +93,10 @@
         }
     ]);
     //Services
-    //    mainApp.service('UtilService', ["$http", "$q", "$location", "$window", ManageAppConfig.Service.UtilService]);
-    mainApp.service('EnumListService', ["$http", "$q", ManageAppConfig.Service.EnumListService]);
+    //    mainApp.service('UtilService', ["$http", "$q", "$location", "$window", ManageAppConfig_Var.Service.UtilService]);
+    mainApp.service('EnumListService', ["$http", "$q", ManageAppConfig_Var.Service.EnumListService]);
     //Controllers
-    mainApp.controller('MachineController', ["$rootScope", "$http", "EnumListService", "UtilService", ManageAppConfig_Typescript.Controller.MachineController]);
-    //    mainApp.controller('ApplicationController', ["$rootScope", "$http", "$q", "EnumListService", "UtilService", ManageAppConfig.Controller.ApplicationController]);
+    mainApp.controller('MachineController', ["$rootScope", "$http", "EnumListService", "UtilService", ManageAppConfig_Var.Controller.MachineController]);
+    //    mainApp.controller('ApplicationController', ["$rootScope", "$http", "$q", "EnumListService", "UtilService", ManageAppConfig_Var.Controller.ApplicationController]);
 })();
 console.log('Angular registration complete.');

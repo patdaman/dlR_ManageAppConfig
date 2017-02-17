@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace ManageAppConfig.Areas.HelpPage.ModelDescriptions
+namespace ManageAppConfig_Typescript.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

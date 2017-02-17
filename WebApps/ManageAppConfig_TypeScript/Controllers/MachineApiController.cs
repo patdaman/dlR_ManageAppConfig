@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ManageAppConfig.Controllers
+namespace ManageAppConfig_Typescript.Controllers
 {
     public class MachineApiController : ApiController
     {
