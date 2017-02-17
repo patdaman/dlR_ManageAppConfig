@@ -5,45 +5,62 @@
 
 <h2>Machine Editor</h2>
 
-<div ng-controller="MachineController as vm">
-    <div class="panel panel-danger">
-        <div class="panel-heading"></div>
-        <div class="panel-body">
-            <form class="input" ng-submit="vm.submit()" role="form">
-                <div style="border: 2px solid gray;width:600px;">
-                    <labl> <b> Add a New Model:  NG GRID DEMO </b></labl>
-                    <div class="form-group">
-                        <label>
-                            <b>Company:</b></label>
-                            <input id="inputs" class="form-control" type="text" ng-model="vm.Company">
-                    </div>
-                    <div class="form-group">
-                        <label><b>Model :</b></label>
-                        <input id="Number1" class="form-control" type="text" ng-model="vm.Model">
-                    </div>
-                    <div class="form-group">
-                        <label>Price</label>
-                        <input id="Date1" class="form-control" type="number" ng-model="vm.Price">
-                    </div>
-                    <div class="form-group">
-                        <label>Stocks</label>
-                        <input id="Number2" class="form-control" type="number" ng-model="vm.Stocks">
-                    </div>
+    <div ng-controller="MainCtrl">
+        <div class="control-group">
+            <input type="button" class="btn btn-small" ng-click="expandAllRows()" value="Expand All" />
+            <input type="button" class="btn btn-small" ng-click="collapseAllRows()" value="Collapse All" />
+        </div>
+        <div ui-grid="gridOptions" ui-grid-pinning ui-grid-expandable class="grid"></div>
+    </div>
+    Expandable rows works with checkboxes from selection and left pins
+    <div ng-controller="SecondCtrl">
+        <div ui-grid="gridOptions" ui-grid-pinning ui-grid-expandable ui-grid-selection class="grid"></div>
+    </div>
+    Retrieve data for subGrid when expanding
+    <div ng-controller="ThirdCtrl">
+        <div ui-grid="gridOptions" ui-grid-expandable class="grid"></div>
+    </div>
 
-                    <div class="form-group">
-                        <input type="submit" value="submit" id="but" class="btn btn-success">
-                        <button type="button" ng-click="vm.changeGroupBy('Company','Price')">Company By Name and Price</button>
-                        <button type="button" ng-click="vm.clearGroupBy()">Clear Group</button>
+    @*<div ng-controller="MachineController as vm">
+        <div class="panel panel-danger">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <form class="input" ng-submit="vm.submit()" role="form">
+                    <div style="border: 2px solid gray;width:600px;">
+                        <labl> <b> Add a New Model:  NG GRID DEMO </b></labl>
+                        <div class="form-group">
+                            <label>
+                                <b>Company:</b>
+                            </label>
+                            <input id="inputs" class="form-control" type="text" ng-model="vm.Company">
+                        </div>
+                        <div class="form-group">
+                            <label><b>Model :</b></label>
+                            <input id="Number1" class="form-control" type="text" ng-model="vm.Model">
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input id="Date1" class="form-control" type="number" ng-model="vm.Price">
+                        </div>
+                        <div class="form-group">
+                            <label>Stocks</label>
+                            <input id="Number2" class="form-control" type="number" ng-model="vm.Stocks">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="submit" id="but" class="btn btn-success">
+                            <button type="button" ng-click="vm.changeGroupBy('Company','Price')">Company By Name and Price</button>
+                            <button type="button" ng-click="vm.clearGroupBy()">Clear Group</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading"><b><p style="padding-left:50px;">Model and Stocks Information</p></b></div>
+            <div style="width: 500px;">
+                <div class="gridStyle" ui-grid="gridOptions"></div>
+            </div>
         </div>
     </div>
-    <div class="panel panel-danger">
-        <div class="panel-heading"><b><p style="padding-left:50px;">Model and Stocks Information</p></b></div>
-        <div style="width: 500px;">
-            <div class="gridStyle" ui-grid="gridOptions"></div>
-        </div>
-    </div>  
-</div>
-
+        *@
