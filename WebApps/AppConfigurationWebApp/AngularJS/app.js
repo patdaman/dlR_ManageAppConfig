@@ -1,7 +1,7 @@
 ///-------------------------------------------------------------------------------------------------
 // <summary>application class</summary>
 ///-------------------------------------------------------------------------------------------------
-'use strict';
+//'use strict';
 (function () {
     var ApiPath = ManageAppConfig_Var.ApiPath;
     var TitleTag = ManageAppConfig_Var.TitleTag;
@@ -9,6 +9,7 @@
         .run(['$rootScope', function ($rootScope) {
             $rootScope.APIPath = ApiPath;
         }]);
+    //var app = angular.module('app', ['ui.grid']);
     // error handling [] are for minification safety
     mainApp.factory('$exceptionHandler', [function () {
             return function (exception, cause) {

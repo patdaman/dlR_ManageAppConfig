@@ -27,7 +27,7 @@ namespace AppConfigurationWebApp
                       "~/Scripts/angular.js",
                       "~/Scripts/angular-route.js",
                       "~/Scripts/ui-grid.min.js",
-                      "~/AngularJS/app.ts",
+                      //"~/AngularJS/app.ts",
                       "~/AngularJS/Controllers/MachineController.ts"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

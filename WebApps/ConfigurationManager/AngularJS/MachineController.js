@@ -1,6 +1,6 @@
 ﻿
 
-var app = angular.module('app', ['ngTouch', 'ui.grid', 'ui.grid.edit', 'ui.grid.pagination']);
+var app = angular.module('app', ['ui.grid', 'ui.grid.edit', 'ui.grid.pagination']);
 
 app.controller('machinecontroller', function ($scope, machinecrudservice) {
     $scope.title = "Machine Configuration ";
