@@ -5,5 +5,7 @@
 **/bin/**
 */obj
 */bin
+*.suo
+
 
 

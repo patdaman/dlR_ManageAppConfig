@@ -331,6 +331,7 @@
     <TypeScriptCompile Include="AngularJS\app.ts" />
     <TypeScriptCompile Include="AngularJS\Controllers\ConfigController.ts" />
     <TypeScriptCompile Include="AngularJS\Controllers\MachineController.ts" />
+    <TypeScriptCompile Include="AngularJS\Controllers\MachineController2.ts" />
     <TypeScriptCompile Include="AngularJS\Models\Application.ts" />
     <TypeScriptCompile Include="AngularJS\Models\ConfigVariable.ts" />
     <TypeScriptCompile Include="AngularJS\Models\EnumLinkModel.ts" />
