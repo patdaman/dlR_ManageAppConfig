@@ -14,6 +14,9 @@ namespace ViewModel
         public System.DateTime create_date { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
+        public List<Application> Applications { get; set; }
+        public List<EnvironmentVariable> EnVars { get; set; }
+        public List<ConfigVariable> ConfigVars { get; set; }
     }
 
     public partial class MachineGroup
@@ -33,6 +36,9 @@ namespace ViewModel
         public int configVariable_id { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
+        public List<Machine> Machines { get; set; }
+        public List<ConfigVariable> ConfigVars { get; set; }
+        public List<EnvironmentVariable> EnVars { get; set; }
     }
 
     public class ConfigVariable
@@ -47,6 +53,8 @@ namespace ViewModel
         public System.DateTime create_date { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
+        public List<Application> Applications { get; set; }
+        public List<Machine> Machines { get; set; }
     }
 
     public class EnvironmentVariable
@@ -59,5 +67,7 @@ namespace ViewModel
         public System.DateTime create_date { get; set; }
         public Nullable<System.DateTime> modify_date { get; set; }
         public bool active { get; set; }
+        public List<Application> Applications { get; set; }
+        public List<Machine> Machines { get; set; }
     }
 }

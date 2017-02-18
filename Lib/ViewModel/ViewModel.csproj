@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfigModels.cs" />
+    <Compile Include="ComplexConfig.cs" />
     <Compile Include="ConfigModels.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[ApplicationsConfigVariables] (
+﻿CREATE TABLE [config].[ApplicationsConfigVariables] (
     [application_id]    INT NOT NULL,
     [configvariable_id] INT NOT NULL,
     CONSTRAINT [PK_ApplicationsConfigVariables] PRIMARY KEY CLUSTERED ([application_id] ASC, [configvariable_id] ASC),

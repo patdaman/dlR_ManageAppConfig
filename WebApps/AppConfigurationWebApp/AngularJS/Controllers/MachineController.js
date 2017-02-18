@@ -71,7 +71,9 @@
 ////                })
 ////            }
 ////        }
-var app = angular.module('app', ['ui.grid', 'ui.grid.edit', 'ui.grid.pagination']);
+var app = angular.module('app', ['ui.grid', 'ui.grid.edit',
+    'ui.grid.pagination', 'ui.grid.expandable',
+    'ui.grid.selection', 'ui.grid.pinning']);
 app.controller('MachineController', function ($scope, $http) {
     $scope.title = "Machine Configuration ";
     var vm = $scope;
@@ -102,20 +104,24 @@ app.controller('MachineController', function ($scope, $http) {
         });
     };
     $scope.gridOptions = {
-        //grid pagination
-        paginationPageSizes: [10, 25, 50, 75],
-        paginationPageSize: 10,
-        enableSorting: true,
-        //enabling filtering
-        enableFiltering: true,
-        enableEditing: true,
+        enablePaging: true,
+        //paginationPageSizes: [10, 25, 50, 75],
+        //paginationPageSize: 10,
         pagingOptions: $scope.pagingOptions,
         enablePinning: true,
-        enablePaging: true,
         showFooter: true,
+        enableSorting: true,
+        enableFiltering: true,
+        enableEditing: true,
         enableColumnResize: true,
         enableCellSelection: true,
-        //column definations
+        expandableRowTemplate: 'expandableRowTemplate.html',
+        expandableRowHeight: 150,
+        //subGridVariable will be available in subGrid scope
+        expandableRowScope: {
+            subGridVariable: 'subGridScopeVariable'
+        },
+        //column definitions
         //we can specify sorting mechnism also
         ColumnDefs: [
             { field: 'id' },
@@ -155,7 +161,7 @@ app.controller('MachineController', function ($scope, $http) {
         directions: ['asc'],
         columns: [0, 1]
     };
-    $scope.totalServerItems = 0;
+    //$scope.totalServerItems = 0;
     $scope.pagingOptions = {
         pageSizes: [5, 10, 20],
         pageSize: 5,

@@ -175,3 +175,5 @@ C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\WebApps\ConfigurationM
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\WebApps\ConfigurationManager\obj\Debug\ConfigurationManager.csprojResolveAssemblyReference.cache
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\WebApps\ConfigurationManager\obj\Debug\ConfigurationManager.dll
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\WebApps\ConfigurationManager\obj\Debug\ConfigurationManager.pdb
+D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ConfigurationManager\bin\SGNL.CommonUtils.Reflection.dll
+D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ConfigurationManager\bin\SGNL.CommonUtils.Reflection.pdb

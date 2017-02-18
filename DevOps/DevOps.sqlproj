@@ -72,7 +72,6 @@
     <Build Include="Tables\Machines.sql" />
     <Build Include="Tables\Enum_MachineUsageType.sql" />
     <Build Include="Tables\MachineGroup.sql" />
-    <Build Include="Tables\ApplicationsConfigVariables.sql" />
     <Build Include="Tables\MachineVariables.sql" />
     <Build Include="Tables\ApplicationConfigVariables.sql" />
     <Build Include="Tables\ApplicationEnvironmentVariables.sql" />
@@ -86,6 +85,8 @@
     <Build Include="Stored Procedures\usp_ViewErrorTables.sql" />
     <Build Include="Security\config.sql" />
     <Build Include="Security\Login1.sql" />
+    <Build Include="Tables\MachineConfigVars.sql" />
+    <Build Include="Tables\ApplicationsConfigVariables.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DevOps.publish.xml" />

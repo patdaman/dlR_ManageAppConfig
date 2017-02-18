@@ -52,3 +52,5 @@ C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\BusinessLayer\bin\
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\BusinessLayer\bin\Debug\ViewModel.pdb
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\BusinessLayer\bin\Debug\EntityFramework.xml
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Development\GitHub\dlR_ManageAppConfig\Lib\BusinessLayer\bin\Debug\SGNL.CommonUtils.Reflection.dll
+D:\Development\GitHub\dlR_ManageAppConfig\Lib\BusinessLayer\bin\Debug\SGNL.CommonUtils.Reflection.pdb

@@ -14,3 +14,13 @@ C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_C
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.csprojResolveAssemblyReference.cache
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.exe
 C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.pdb
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\bin\Debug\UpdateAppConfig_Compact.exe.config
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\bin\Debug\UpdateAppConfig_Compact.exe
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\bin\Debug\UpdateAppConfig_Compact.pdb
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\bin\Debug\EntityFramework.dll
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\bin\Debug\EntityFramework.SqlServer.dll
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\bin\Debug\EntityFramework.xml
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\bin\Debug\EntityFramework.SqlServer.xml
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.csprojResolveAssemblyReference.cache
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.exe
+D:\Development\GitHub\dlR_ManageAppConfig\Apps\UpdateAppConfig_Compact\obj\Debug\UpdateAppConfig_Compact.pdb

@@ -140,3 +140,5 @@ D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ManageAppConfig\bin\EntityFram
 D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ManageAppConfig\obj\Debug\ManageAppConfig.csprojResolveAssemblyReference.cache
 D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ManageAppConfig\obj\Debug\ManageAppConfig.dll
 D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ManageAppConfig\obj\Debug\ManageAppConfig.pdb
+D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ManageAppConfig\bin\SGNL.CommonUtils.Reflection.dll
+D:\Development\GitHub\dlR_ManageAppConfig\WebApps\ManageAppConfig\bin\SGNL.CommonUtils.Reflection.pdb

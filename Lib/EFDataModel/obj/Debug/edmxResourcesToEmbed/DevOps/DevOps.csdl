@@ -8,11 +8,11 @@
     <Property Name="name" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="release" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="configVariable_id" Type="Int32" Nullable="false" />
     <Property Name="modify_date" Type="DateTime" Precision="3" />
     <Property Name="active" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="ConfigVariables" Relationship="Self.ApplicationConfigVariables" FromRole="Applications" ToRole="ConfigVariables" />
     <NavigationProperty Name="EnvironmentVariables" Relationship="Self.ApplicationEnvironmentVariables" FromRole="Applications" ToRole="EnvironmentVariables" />
+    <NavigationProperty Name="ConfigVariables1" Relationship="Self.ApplicationsConfigVariables" FromRole="Applications" ToRole="ConfigVariables" />
     <NavigationProperty Name="Machines" Relationship="Self.MachineApplications" FromRole="Applications" ToRole="Machines" />
   </EntityType>
   <EntityType Name="ConfigVariable">
@@ -30,6 +30,8 @@
     <Property Name="modify_date" Type="DateTime" Precision="3" />
     <Property Name="active" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Applications" Relationship="Self.ApplicationConfigVariables" FromRole="ConfigVariables" ToRole="Applications" />
+    <NavigationProperty Name="Applications1" Relationship="Self.ApplicationsConfigVariables" FromRole="ConfigVariables" ToRole="Applications" />
+    <NavigationProperty Name="Machines" Relationship="Self.MachineConfigVars" FromRole="ConfigVariables" ToRole="Machines" />
   </EntityType>
   <EntityType Name="Enum_EnvironmentVariableType">
     <Key>
@@ -98,6 +100,7 @@
     <NavigationProperty Name="Enum_Locations" Relationship="Self.FK_Machines_Enum_Locations" FromRole="Machines" ToRole="Enum_Locations" />
     <NavigationProperty Name="Enum_MachineUsageType" Relationship="Self.FK_Machines_Enum_MachineUsageType" FromRole="Machines" ToRole="Enum_MachineUsageType" />
     <NavigationProperty Name="Applications" Relationship="Self.MachineApplications" FromRole="Machines" ToRole="Applications" />
+    <NavigationProperty Name="ConfigVariables" Relationship="Self.MachineConfigVars" FromRole="Machines" ToRole="ConfigVariables" />
     <NavigationProperty Name="MachineGroups" Relationship="Self.MachineGroupMapping" FromRole="Machines" ToRole="MachineGroup" />
     <NavigationProperty Name="EnvironmentVariables" Relationship="Self.MachineVariables" FromRole="Machines" ToRole="EnvironmentVariables" />
   </EntityType>
@@ -145,8 +148,16 @@
     <End Role="Applications" Type="Self.Application" Multiplicity="*" />
     <End Role="EnvironmentVariables" Type="Self.EnvironmentVariable" Multiplicity="*" />
   </Association>
+  <Association Name="ApplicationsConfigVariables">
+    <End Role="Applications" Type="Self.Application" Multiplicity="*" />
+    <End Role="ConfigVariables" Type="Self.ConfigVariable" Multiplicity="*" />
+  </Association>
   <Association Name="MachineApplications">
     <End Role="Applications" Type="Self.Application" Multiplicity="*" />
+    <End Role="Machines" Type="Self.Machine" Multiplicity="*" />
+  </Association>
+  <Association Name="MachineConfigVars">
+    <End Role="ConfigVariables" Type="Self.ConfigVariable" Multiplicity="*" />
     <End Role="Machines" Type="Self.Machine" Multiplicity="*" />
   </Association>
   <Association Name="MachineGroupMapping">
@@ -186,8 +197,16 @@
       <End Role="Applications" EntitySet="Applications" />
       <End Role="EnvironmentVariables" EntitySet="EnvironmentVariables" />
     </AssociationSet>
+    <AssociationSet Name="ApplicationsConfigVariables" Association="Self.ApplicationsConfigVariables">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="ConfigVariables" EntitySet="ConfigVariables" />
+    </AssociationSet>
     <AssociationSet Name="MachineApplications" Association="Self.MachineApplications">
       <End Role="Applications" EntitySet="Applications" />
+      <End Role="Machines" EntitySet="Machines" />
+    </AssociationSet>
+    <AssociationSet Name="MachineConfigVars" Association="Self.MachineConfigVars">
+      <End Role="ConfigVariables" EntitySet="ConfigVariables" />
       <End Role="Machines" EntitySet="Machines" />
     </AssociationSet>
     <AssociationSet Name="MachineGroupMapping" Association="Self.MachineGroupMapping">

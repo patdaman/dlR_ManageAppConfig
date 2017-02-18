@@ -49,7 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertObjects.cs" />
     <Compile Include="ManageAppConfigVariables.cs" />
+    <Compile Include="ManageConfig.cs" />
     <Compile Include="ManageEnvironmentVariables.cs" />
     <Compile Include="ManageMachines.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +68,10 @@
     <ProjectReference Include="..\CommonUtils.EnvVariables\CommonUtils.EnvVariables.csproj">
       <Project>{684bc424-e89c-44d1-8194-7c9754957e28}</Project>
       <Name>CommonUtils.EnvVariables</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonUtils.Reflection\CommonUtils.Reflection.csproj">
+      <Project>{a91ff807-0524-481b-888f-e323076c340e}</Project>
+      <Name>CommonUtils.Reflection</Name>
     </ProjectReference>
     <ProjectReference Include="..\EFDataModel\EFDataModel.csproj">
       <Project>{c1f09cbb-c60e-48c8-8a8a-ad1235323f57}</Project>

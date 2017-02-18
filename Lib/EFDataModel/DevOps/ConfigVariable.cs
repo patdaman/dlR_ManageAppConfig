@@ -18,6 +18,8 @@ namespace EFDataModel.DevOps
         public ConfigVariable()
         {
             this.Applications = new HashSet<Application>();
+            this.Applications1 = new HashSet<Application>();
+            this.Machines = new HashSet<Machine>();
         }
     
         public int id { get; set; }
@@ -33,5 +35,9 @@ namespace EFDataModel.DevOps
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Application> Applications1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Machine> Machines { get; set; }
     }
 }
