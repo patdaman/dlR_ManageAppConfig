@@ -6,6 +6,8 @@
 */obj
 */bin
 *.suo
+**/.suo
 
 
-
+/DevOps/DevOps.dbmdl
+/DevOps/DevOps.jfm
