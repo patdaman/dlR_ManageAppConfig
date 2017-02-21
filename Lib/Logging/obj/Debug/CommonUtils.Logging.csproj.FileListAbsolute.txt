@@ -1,2 +1,0 @@
-C:\Users\pdelosreyes\Documents\Development\Lib\CommonUtils.Logging\obj\Debug\CommonUtils.Logging.csprojResolveAssemblyReference.cache
-C:\Users\pdelosreyes\Documents\GitHub\dlR_ManageAppConfig\Lib\CommonUtils.Logging\obj\Debug\CommonUtils.Logging.csprojResolveAssemblyReference.cache
