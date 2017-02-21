@@ -6,6 +6,9 @@
 */obj
 */bin
 *.suo
+**/*.suo
 
+applicationinsights.config
 
-
+/DevOps/DevOps.dbmdl
+/DevOps/DevOps.jfm
