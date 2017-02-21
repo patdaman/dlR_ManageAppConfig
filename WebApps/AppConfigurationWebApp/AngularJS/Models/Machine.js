@@ -10,3 +10,4 @@ var ManageAppConfig_Typescript;
         Model.Machine = Machine;
     })(Model = ManageAppConfig_Typescript.Model || (ManageAppConfig_Typescript.Model = {}));
 })(ManageAppConfig_Typescript || (ManageAppConfig_Typescript = {}));
+//# sourceMappingURL=Machine.js.map

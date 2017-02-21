@@ -92,3 +92,4 @@ app.controller('ThirdCtrl', ['$scope', '$http', '$log', function ($scope, $http,
             $scope.gridOptions.data = data;
         });
     }]);
+//# sourceMappingURL=MachineController2.js.map

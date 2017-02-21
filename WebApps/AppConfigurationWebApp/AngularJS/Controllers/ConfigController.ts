@@ -177,7 +177,7 @@ app.controller('ConfigController', function ($scope, $http) {
 
     $scope.get = function (ConfigVar) {
         //debugger;
-        var singlerecord = $http.get("/api/ConfigApi/" + Machine.id);
+        var singlerecord = $http.get("/api/ConfigApi/"); // + Machine.id);
         singlerecord.then(function (d) {
             // debugger;
             var record = d.data;
@@ -209,7 +209,7 @@ app.controller('ConfigController', function ($scope, $http) {
         debugger;
         var updaterecords = $http({
             method: 'put',
-            url: "/api/ConfigApi/" + Machine.id,
+            url: "/api/ConfigApi/" ,// + Machine.id,
             data: ConfigVar
         });
         updaterecords.then(function (d) {

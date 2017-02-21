@@ -286,3 +286,4 @@ app.controller('MachineController', function ($scope, $http) {
     };
     $scope.gridOptions.data = $scope.Machines;
 });
+//# sourceMappingURL=MachineController.js.map

@@ -10,3 +10,4 @@ var ManageAppConfig_Typescript;
         Model.ConfigVariable = ConfigVariable;
     })(Model = ManageAppConfig_Typescript.Model || (ManageAppConfig_Typescript.Model = {}));
 })(ManageAppConfig_Typescript || (ManageAppConfig_Typescript = {}));
+//# sourceMappingURL=ConfigVariable.js.map

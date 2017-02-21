@@ -75,3 +75,4 @@ var ManageAppConfig_Typescript;
         Service.MachineApiService = MachineApiService;
     })(Service = ManageAppConfig_Typescript.Service || (ManageAppConfig_Typescript.Service = {}));
 })(ManageAppConfig_Typescript || (ManageAppConfig_Typescript = {}));
+//# sourceMappingURL=MachineApiService.js.map
